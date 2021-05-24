@@ -31,6 +31,11 @@
     padding-bottom: 26px;
     margin: 0;
   }
+  .column__title_bold {
+    font-weight: bolder;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    letter-spacing: -2px;
+  }
   .column__text {
     font-style: normal;
     font-weight: normal;

@@ -16,7 +16,7 @@ function AboutProject() {
           </p>
         </div>
         <div className="column">
-          <p className="column__title">На выполнение диплома ушло 5 недель</p>
+          <p className="column__title column__title_bold">На выполнение диплома ушло 5 недель</p>
           <p className="column__text">
             У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
             соблюдать, чтобы успешно защититься.
