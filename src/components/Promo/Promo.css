@@ -29,10 +29,12 @@
   
   @media screen and (max-width: 523px) {
     .promo {
+      background-image: url(../../images/landing-logo_mini.png);
       padding: 207px 10px 246px;
     }
     .promo__title {
       font-size: 31px;
       line-height: 39px;
+      letter-spacing: -0.04em;
     }
   }

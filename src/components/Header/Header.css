@@ -13,9 +13,10 @@
     display: flex;
     margin-left: 44px;
     flex-direction: row;
+    flex-wrap: nowrap;
     width: 100%;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .header_white {
     background-color: #fafafa;
@@ -217,6 +218,9 @@
   @media screen and (max-width: 523px) {
     .header {
       padding: 18px 14px;
+    }
+    .header__account {
+     display: none;
     }
     .header__signup {
       margin-right: 14px;

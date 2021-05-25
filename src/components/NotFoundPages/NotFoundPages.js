@@ -7,7 +7,6 @@ function NotFoundPage() {
   const history = useHistory();
 
   return (
-    <div>
       <div className="not-found-page">
         <p className="not-found-page__header"> 404 </p>
         <p className="not-found-page__text"> Страница не найдена</p>
@@ -15,7 +14,6 @@ function NotFoundPage() {
           Назад
         </Link>
       </div>
-    </div>
   );
 }
 
