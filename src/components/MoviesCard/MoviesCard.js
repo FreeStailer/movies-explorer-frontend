@@ -8,7 +8,7 @@ import deleteCardIcon from "../../images/delete_icon.svg";
 
 
 function MoviesCard() {
-  const isAdded = false; // стейт true или false для проверки кнопочки
+  const isAdded = true; // стейт true или false для проверки кнопочки
   const moviesIcon = (isAdded ? moviesIconCard : moviesSavedCardIcon)
   //отследим адресную строку и если в сохраненном вместо галки крестик сделаем
   const { pathname } = useLocation();
