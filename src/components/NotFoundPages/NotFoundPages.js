@@ -8,7 +8,7 @@ function NotFoundPage() {
 
   return (
       <div className="not-found-page">
-        <p className="not-found-page__header"> 404 </p>
+        <p className="not-found-page__title"> 404 </p>
         <p className="not-found-page__text"> Страница не найдена</p>
         <Link onClick={() => history.goBack()} className="not-found-page__link">
           Назад

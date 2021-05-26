@@ -121,11 +121,11 @@
   visibility: hidden;
 }
 
-/* скрываем чекбокс */
+
 #menu__toggle {
   opacity: 0;
 }
-/* стилизуем кнопку */
+
 .menu__btn {
   display: flex;
   align-items: center;
@@ -138,7 +138,6 @@
   z-index: 4;
 }
 
-/* добавляем "гамбургер" */
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
@@ -157,7 +156,6 @@
   top: 8px;
 }
 
-/* контейнер меню */
 .menu__box {
   display: block;
   position: fixed;
@@ -175,7 +173,6 @@
   z-index: 3;
 }
 
-/* элементы меню */
 .menu__item {
   display: block;
   color: #333;
@@ -196,7 +193,7 @@
   font-style: normal;
   justify-content: center;
   align-content: center;
-  margin-top: 621px;
+  margin-top: 400px; /*сорри но так лучше*/
 }
 
 .menu__link {
