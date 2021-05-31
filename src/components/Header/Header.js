@@ -6,9 +6,8 @@ import Headmovies from "../Headmovies/Headmovies";
 import Headauth from "../Headauth/Headauth";
 
 
-function Header() {
+function Header({isLogin}) {
 
-    const isLogin = true; // стейт true или false для проверки
     const location = useLocation().pathname;
 
     return(
