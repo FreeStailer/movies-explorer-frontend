@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
@@ -372,15 +374,14 @@ function App() {
                                     onBookmarkClick={onBookmarkClick}>
                     </ProtectedRoute>
 
-                    <ProtectedRoute path='/saved-movies' exact>
-                        <Header />
-                        <Movies />
-                        <Footer />
+                    <ProtectedRoute path='/saved-movies' exact component ={Movies} isLogin={isLogin} savedMovies={true}
+                                    movies={hasQuery ? filterSavedMovies : savedMovies} isLoading={isLoading}
+                                    loadingError={loadingError} isSavedMovie={isSavedMovie} onSubmitSearch={onSubmitSearchSaved}
+                                    onBookmarkClick={onBookmarkClick}>
                     </ProtectedRoute>
 
-                    <ProtectedRoute path='/profile' exact>
-                        <Header />
-                        <Profile />
+                    <ProtectedRoute path='/profile' exact component={Profile} isLogin={isLogin} handleLogout={handleLogout}
+                                    handleEditProfile={handleEditProfile}>
                     </ProtectedRoute>
 
                     <Route path='/signin' exact>

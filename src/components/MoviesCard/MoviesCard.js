@@ -1,32 +1,45 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
-import testpic from "../../images/test.png";
-import moviesIconCard from "../../images/save_icon.svg";
-import moviesSavedCardIcon from "../../images/saved_icon.svg";
-import deleteCardIcon from "../../images/delete_icon.svg";
 
+function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
+  const { nameRU, duration, trailer, image } = movie;
 
-function MoviesCard() {
-  const isAdded = true; // стейт true или false для проверки кнопочки
-  const moviesIcon = (isAdded ? moviesIconCard : moviesSavedCardIcon)
-  //отследим адресную строку и если в сохраненном вместо галки крестик сделаем
-  const { pathname } = useLocation();
-  const cardIcon = (pathname === "/movies" ? moviesIcon : deleteCardIcon)
+  let isSaved = isSavedMovie(movie);
 
+  function durationFormat(duration) {
+    const hh = Math.trunc(duration / 60);
+    const mm = duration % 60;
+    return `${hh > 0 ? hh + "ч " : ""}${mm}м`;
+  }
 
+  function handleBookmarkClick(evt) {
+    evt.preventDefault();
+    onBookmarkClick(movie, !isSaved);
+  }
 
+  function handleDelete() {
+    onBookmarkClick(movie, false);
+  }
   return (
     <>
         <li className="grid__item">
             <div className="grid__text-container">
                 <div className="grid__name-block">
-                    <p className="grid__text">Мужик сидит</p>
+                    <p className="grid__text">{nameRU}</p>
                 </div>
-                <p className="grid__duration">158мин</p>
+                <p className="grid__duration">{durationFormat(duration)}</p>
             </div>
-            <img src={testpic} alt="изображение фильма" className="grid__image" />
-            <img alt="иконка карточки" className="grid__icon" src={cardIcon} />
+            <a href={trailer}>
+              <img src={image} alt="изображение фильма" className="grid__image" />
+            </a>
+            {savedMovies ? (
+              <button className="grid__icon grid__icon_del" onClick={handleDelete} />
+              ) : (
+              <button onClick={handleBookmarkClick} className={
+                  isSaved ? "grid__icon grid__icon_saved" : "grid__icon grid__icon_unsaved"
+                }
+              />
+            )}
         </li>
     </>
   );
