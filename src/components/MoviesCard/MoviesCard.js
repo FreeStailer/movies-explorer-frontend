@@ -12,8 +12,12 @@ function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
     return `${hh > 0 ? hh + "ч " : ""}${mm}м`;
   }
 
-  function handleBookmarkClick(evt) {
-    evt.preventDefault();
+  // function handleBookmarkClick(evt) {
+  //   evt.preventDefault();
+  //   onBookmarkClick(movie, !isSaved);
+  // }
+
+  function handleBookmarkClick() {
     onBookmarkClick(movie, !isSaved);
   }
 
@@ -21,7 +25,6 @@ function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
     onBookmarkClick(movie, false);
   }
   return (
-    <>
         <li className="grid__item">
             <div className="grid__text-container">
                 <div className="grid__name-block">
@@ -33,15 +36,13 @@ function MoviesCard({ savedMovies, movie, onBookmarkClick, isSavedMovie }) {
               <img src={image} alt="изображение фильма" className="grid__image" />
             </a>
             {savedMovies ? (
-              <button className="grid__icon grid__icon_del" onClick={handleDelete} />
-              ) : (
-              <button onClick={handleBookmarkClick} className={
-                  isSaved ? "grid__icon grid__icon_saved" : "grid__icon grid__icon_unsaved"
-                }
-              />
+                  <button onClick={handleDelete} className="grid__icon grid__icon_del" />
+                  ) : (
+                  <button onClick={handleBookmarkClick} className={ isSaved ? "grid__icon grid__icon_saved" : "grid__icon grid__icon_unsaved"}
+                />
             )}
+            
         </li>
-    </>
   );
 }
 

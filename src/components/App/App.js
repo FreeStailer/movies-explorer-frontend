@@ -94,7 +94,7 @@ function App() {
           handleLogin(email, password);
           setIsPopupOpen(true);
           handlePopupContent({
-            iconPath: successLogin,
+            icon: successLogin,
             text: "Вы успешно зарегистрировались!",
           });
           setTimeout(closeAllPopups, 2500);
@@ -104,13 +104,13 @@ function App() {
         if (err.status === 409) {
           setIsPopupOpen(true);
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Такой email уже существует",
           });
         } else {
           setIsPopupOpen(true);
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Что-то пошло не так! Попробуйте ещё раз.",
           });
           setTimeout(closeAllPopups, 2500);
@@ -133,14 +133,14 @@ function App() {
         if (err.status === 400) {
           setIsPopupOpen(true);
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Неверный email или пароль",
           });
           setTimeout(closeAllPopups, 2500);
         } else {
           setIsPopupOpen(true);
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Что-то пошло не так!",
           });
           setTimeout(closeAllPopups, 2500);
@@ -169,7 +169,7 @@ function App() {
         setCurrentUser(profile);
         setIsPopupOpen(true);
         handlePopupContent({
-          iconPath: successLogin,
+          icon: successLogin,
           text: "Информация обновлена",
         });
         setTimeout(history.push, 3000, "/profile");
@@ -178,12 +178,12 @@ function App() {
       .catch((err) => {
         if (err.status === 409) {
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Такой email уже зарегистрирован",
           });
         } else {
           handlePopupContent({
-            iconPath: failedLogin,
+            icon: failedLogin,
             text: "Что-то пошло не так!",
           });
         }
@@ -307,6 +307,7 @@ function App() {
 
   //избранное
   function onBookmarkClick(movie, isMarked) {
+    console.log(isMarked);
     if (isMarked) {
       addMovie(movie);
     } else {
@@ -317,7 +318,6 @@ function App() {
   //удаление из избранного
   function deleteMovie(movie) {
     const movieId = savedMovies.find((item) => item.id === movie.id)._id;
-    console.log(movieId);
     apiMain
       .deleteMovies(movieId)
       .then(() => {
@@ -328,8 +328,8 @@ function App() {
       .catch(() => {
         setIsPopupOpen(true);
         handlePopupContent({
-          iconPath: failedLogin,
-          text: "На сервере произошла ошибка",
+          icon: failedLogin,
+          text: "На сервере произошла ошибка при удалении",
         });
         setTimeout(closeAllPopups, 2500);
       });
@@ -345,8 +345,8 @@ function App() {
       .catch(() => {
         setIsPopupOpen(true);
         handlePopupContent({
-          iconPath: failedLogin,
-          text: "На сервере произошла ошибка",
+          icon: failedLogin,
+          text: "На сервере произошла ошибка при добавлении",
         });
         setTimeout(closeAllPopups, 2500);
       });

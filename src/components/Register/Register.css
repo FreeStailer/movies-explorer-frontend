@@ -1,22 +1,22 @@
-.login {
+.register {
   padding: 70px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.login__form {
+.register__form {
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 396px;
 }
 
-.login__logo {
+.register__logo {
   width: 38px;
 }
 
-.login__header {
+.register__header {
   position: relative;
   color: black;
   font-style: normal;
@@ -27,7 +27,7 @@
   margin: 40px 0 16px;
 }
 
-.login__input {
+.register__input {
   outline: none;
   border: 0;
   border-bottom: 1px solid #e8e8e8;
@@ -35,7 +35,7 @@
   background-color: transparent;
 }
 
-.login__label {
+.register__label {
   text-align: left;
   font-style: normal;
   font-weight: normal;
@@ -45,24 +45,24 @@
   margin: 24px 0 5px;
 }
 
-.login__error {
+.register__error {
   color: #ee3465;
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
   margin-bottom: 10px;
-}
+  }
 
 @media screen and (max-width: 999px) {
-  .login {
+  .register {
     padding: 232px 0;
   }
 
-  .login__header {
+  .register__header {
     margin: 40px 0 16px;
   }
 
-  .login__input {
+  .register__input {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -70,34 +70,35 @@
   }
 }
 @media screen and (max-width: 442px) {
-  .login {
+  .register {
     padding: 58px 30px 30px;
     justify-content: center;
     text-align: center;
   }
 
-  .login__form {
+  .register__form {
     max-width: 260px;
     align-self: center;
   }
 
-  .login__logo {
+  .register__logo {
     align-self: center;
   }
 
-  .login__header {
+  .register__header {
     margin: 50px 0 80px;
     align-self: center;
     font-size: 24px;
     line-height: 29px;
   }
-  .login__label {
+
+  .register__label {
     font-size: 10px;
     line-height: 12px;
     max-width: 260px;
   }
-
-  .login__input {
+  
+  .register__input {
     font-size: 14px;
     line-height: 17px;
     max-width: 260px;
