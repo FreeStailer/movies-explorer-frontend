@@ -1,0 +1,82 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 396px;
+}
+
+.form__button {
+    min-height: 45px;
+    background-color: #3456f3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+    margin: 100px 0 16px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    opacity: 0.8;
+}
+
+.form__button:disabled {
+    background-color: #a0a0a0;
+}
+
+.form__sign-in {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #a0a0a0;
+}
+
+.form__link {
+    color: #3456f3;
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+@media screen and (max-width: 999px) {
+    .form__button {
+        margin: 134px 0 16px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        cursor: pointer;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 442px) {
+    .form {
+        max-width: 260px;
+        align-self: center;
+    }
+        
+    .form__button {
+        max-width: 260px;
+        margin: 222px 0 14px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .form__sign-in {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .form__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
