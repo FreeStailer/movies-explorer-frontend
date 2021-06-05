@@ -219,7 +219,7 @@ function App() {
       .catch(() => {
         localStorage.removeItem("initialMovies");
         setLoadingError(
-          "Проблема с соединением или сервер недоступен. Пожалуйста, попробуйте ещё раз"
+          "Что то пошло не так, возможно проблема со связью"
         );
       });
   }
@@ -237,7 +237,7 @@ function App() {
       .catch(() => {
         localStorage.removeItem("savedMovies");
         setLoadingError(
-          "Проблема с соединением или сервер недоступен. Пожалуйста, попробуйте ещё раз"
+          "Что то пошло не так, возможно проблема со связью"
         );
       });
   }
@@ -260,14 +260,14 @@ function App() {
 
   React.useEffect(() => {
     if (isLogin) {
-      //после авторизации обновим данные для текущего пользователя
       getInitialMovies();
       getSavedMovies();
     }
   }, [isLogin]);
 
   function isSavedMovie(movie) {
-    return savedMovies.some((item) => item.id === movie.id);
+    // eslint-disable-next-line
+    return savedMovies.some((item) => item.id == movie.id);
   }
 
   function filter(data, query) {
@@ -305,9 +305,7 @@ function App() {
     }, 500);
   }
 
-  //избранное
   function onBookmarkClick(movie, isMarked) {
-    console.log(isMarked);
     if (isMarked) {
       addMovie(movie);
     } else {
@@ -315,9 +313,9 @@ function App() {
     }
   }
 
-  //удаление из избранного
   function deleteMovie(movie) {
-    const movieId = savedMovies.find((item) => item.id === movie.id)._id;
+    // eslint-disable-next-line
+    const movieId = savedMovies.find((item) => item.id == movie.id)._id;
     apiMain
       .deleteMovies(movieId)
       .then(() => {
@@ -346,7 +344,7 @@ function App() {
         setIsPopupOpen(true);
         handlePopupContent({
           icon: failedLogin,
-          text: "На сервере произошла ошибка при добавлении",
+          text: "Искуственный интелект не сохранит этот фильм. Обратитесь к компании BeatFilm",
         });
         setTimeout(closeAllPopups, 2500);
       });

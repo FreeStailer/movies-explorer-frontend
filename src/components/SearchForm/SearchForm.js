@@ -35,7 +35,7 @@ function SearchForm({onSubmitSearch, onFilterShort, isLoading}) {
           <img src={searchpic} alt="иконка поиска" className="search__image" />
           <input
             name="search"
-            placeholder="Фильм"
+            placeholder="введите название фильма"
             type="search"
             className="search__input"
             required

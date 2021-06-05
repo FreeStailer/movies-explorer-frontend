@@ -8,7 +8,7 @@ import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
 
 
-function Movies({isLogin, savedMovies, onSubmitSearch, onBookmarkClick, movies, isLoading, loadingError, isSavedMovie}) {
+function Movies({isLogin, savedMovies, onSubmitSearch, movies, isLoading, loadingError, onBookmarkClick, isSavedMovie }) {
 
     const [shortFilm, setShortFilm] = React.useState(false);
 
